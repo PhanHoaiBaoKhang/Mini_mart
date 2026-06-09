@@ -2,6 +2,8 @@ package com.groceryshop.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,6 +22,7 @@ public class Brand {
     private String name;
 
     @Column(length = 500)
+    @Nationalized
     private String description;
 
     @Column(name = "is_active", nullable = false)

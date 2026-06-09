@@ -3,6 +3,8 @@ package com.groceryshop.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
+
 import java.math.BigDecimal;
 
 @Entity
@@ -33,6 +35,7 @@ public class OrderItem {
     private BigDecimal price;
 
     @Column(name = "product_name", nullable = false, length = 255)
+    @Nationalized
     private String productName;
 
     @Column(name = "product_image", length = 255)
